@@ -1,0 +1,11 @@
+<%-include("partials/header")-%>
+<h1>Home Page</h1>
+<p><%= homeStartingContent %></p>
+
+<% posts.forEach(post => { %> 
+    <% let postPreviewContent = post.content.slice(0, 50) + " . . . "; %>
+    <h3><%= post.title %></h3>
+    <p><%= postPreviewContent %> <a href="/posts/<%=post._id%>">Read More</a></p>
+    
+<% }) %> 
+<%-include("partials/footer")-%>
